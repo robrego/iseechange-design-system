@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISeeChange Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary-red-fanta:   #ff7262;
+    --color-primary-green-light: #46d1b4;
+    --color-primary-yellow:      #f7d764;
+    --color-primary-celtic-blue: #0172da;
+    --color-primary-royal:       #062b62;
+    --color-primary-blue-ocean:  #20a0ec;
+    --color-secondary-royal-30:  #14448f;
+    --color-secondary-royal-40:  #345ca8;
+    --color-secondary-royal-50:  #4f75c3;
+    --color-secondary-celtic-60: #3f91fa;
+    --color-secondary-celtic-70: #77acff;
+    --color-secondary-celtic-80: #a8cbff;
+    --color-secondary-celtic-90: #d5eafe;
+    --color-secondary-celtic-95: #ecf6ff;
+    --color-secondary-green-40:  #048485;
+    --color-secondary-green-50:  #109c97;
+    --color-secondary-green-60:  #28b0a5;
+    --color-secondary-green-70:  #28c7ac;
+    --color-secondary-green-90:  #80ddca;
+    --color-secondary-green-95:  #baefe4;
+    --color-secondary-gray-50:   #464b52;
+    --color-secondary-gray-60:   #535962;
+    --color-secondary-gray-70:   #6d7782;
+    --color-secondary-gray-80:   #a1a9b2;
+    --color-secondary-gray-90:   #d0d5d9;
+    --color-secondary-gray-95:   #e1e7ed;
+    --color-secondary-gray-98:   #edf2f7;
+    --color-secondary-red-40:    #ba2a1a;
+    --color-secondary-red-50:    #e53c29;
+    --color-secondary-red-60:    #ff5a47;
+    --color-secondary-yellow-40: #deb31b;
+    --shadow-small:      0px 8px 24px rgba(151,151,151,0.13);
+    --shadow-medium:     0px 12px 30px rgba(0,0,0,0.10);
+    --shadow-big:        0px 16px 30px rgba(0,0,0,0.12);
+    --shadow-bottom-nav: 0px 0px 30px rgba(0,0,0,0.12);
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: #f5f7fa;
+    color: #062b62;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--color-primary-royal);
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-bottom-nav);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 10px; }
+  .nav-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--color-primary-green-light); }
+  .nav-title { color: #fff; font-weight: 500; font-size: 15px; letter-spacing: -0.01em; }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-link { color: rgba(255,255,255,0.55); font-size: 13px; text-decoration: none; cursor: pointer; transition: color 0.15s; }
+  .nav-link:hover, .nav-link.active { color: #fff; }
+  .nav-badge { width: 26px; height: 26px; border-radius: 50%; background: var(--color-primary-red-fanta); display: flex; align-items: center; justify-content: center; font-size: 11px; color: #fff; font-weight: 600; }
+
+  /* LAYOUT */
+  .page { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+
+  .page-header { margin-bottom: 3rem; }
+  .page-title { font-size: 2rem; font-weight: 500; color: var(--color-primary-royal); letter-spacing: -0.02em; }
+  .page-sub { font-size: 14px; color: var(--color-secondary-gray-60); margin-top: 6px; }
+  .tag { display: inline-flex; align-items: center; gap: 6px; background: var(--color-secondary-celtic-95); color: var(--color-primary-celtic-blue); font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 100px; margin-top: 12px; letter-spacing: 0.03em; }
+  .tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary-green-light); }
+
+  /* SECTIONS */
+  .section { margin-bottom: 3rem; }
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary-gray-70);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-secondary-gray-95);
+  }
+
+  /* COLORS */
+  .color-group { margin-bottom: 1.5rem; }
+  .color-group-name { font-size: 11px; font-weight: 500; color: var(--color-secondary-gray-60); margin-bottom: 0.75rem; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 10px; }
+  .swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .swatch-circle { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.06); }
+  .swatch-name { font-size: 9px; color: var(--color-secondary-gray-60); text-align: center; width: 56px; line-height: 1.4; }
+  .swatch-hex { font-size: 8px; color: var(--color-secondary-gray-80); text-align: center; font-family: monospace; }
+
+  /* TYPOGRAPHY */
+  .type-rows { display: flex; flex-direction: column; gap: 1rem; }
+  .type-row { display: flex; align-items: baseline; gap: 1.5rem; padding: 0.75rem 0; border-bottom: 1px solid var(--color-secondary-gray-98); }
+  .type-meta { width: 100px; flex-shrink: 0; }
+  .type-style-name { font-size: 11px; font-weight: 600; color: var(--color-secondary-gray-60); font-family: monospace; }
+  .type-size { font-size: 10px; color: var(--color-secondary-gray-80); margin-top: 2px; }
+
+  /* BUTTONS */
+  .btn-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .btn-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .btn-row-label { font-size: 11px; color: var(--color-secondary-gray-70); width: 70px; flex-shrink: 0; font-weight: 500; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 22px; border-radius: 100px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: var(--font-body); border: none; transition: all 0.15s; }
+  .btn-primary { background: var(--color-primary-celtic-blue); color: #fff; }
+  .btn-primary:hover { background: var(--color-primary-royal); }
+  .btn-primary-dark { background: var(--color-primary-royal); color: #fff; }
+  .btn-secondary { background: transparent; color: var(--color-primary-royal); border: 1.5px solid var(--color-secondary-gray-90); }
+  .btn-secondary:hover { background: var(--color-secondary-gray-98); border-color: var(--color-secondary-gray-80); }
+  .btn-secondary-dark { background: var(--color-secondary-gray-98); color: var(--color-primary-royal); border: 1.5px solid var(--color-secondary-gray-80); }
+  .btn-tertiary { background: transparent; color: var(--color-primary-celtic-blue); border: none; padding-left: 0; padding-right: 0; }
+  .btn-tertiary:hover { color: var(--color-primary-royal); }
+  .btn-disabled { opacity: 0.35; cursor: not-allowed; pointer-events: none; }
+
+  /* INPUTS */
+  .input-grid { display: flex; flex-direction: column; gap: 12px; max-width: 400px; }
+  .input-label { font-size: 12px; font-weight: 500; color: var(--color-secondary-gray-50); margin-bottom: 4px; }
+  .isc-input { width: 100%; padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(--color-secondary-gray-90); font-size: 14px; font-family: var(--font-body); color: var(--color-primary-royal); background: #fff; outline: none; transition: border-color 0.15s; }
+  .isc-input:focus { border-color: var(--color-primary-celtic-blue); }
+  .isc-input::placeholder { color: var(--color-secondary-gray-80); }
+  .isc-input.error { border-color: var(--color-secondary-red-50); }
+
+  /* PILLS */
+  .pills-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 500; }
+  .pill-blue { background: var(--color-secondary-celtic-90); color: var(--color-primary-celtic-blue); }
+  .pill-green { background: var(--color-secondary-green-95); color: var(--color-secondary-green-40); }
+  .pill-red { background: #ffdad5; color: var(--color-secondary-red-40); }
+  .pill-yellow { background: #fff3c4; color: var(--color-secondary-yellow-40); }
+  .pill-royal { background: var(--color-secondary-celtic-95); color: var(--color-primary-royal); }
+  .pill-gray { background: var(--color-secondary-gray-95); color: var(--color-secondary-gray-50); }
+
+  /* SHADOWS */
+  .shadow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .shadow-card { background: #fff; border-radius: 12px; padding: 1.25rem; text-align: center; }
+  .shadow-name { font-size: 12px; color: var(--color-secondary-gray-60); font-weight: 500; }
+  .shadow-value { font-size: 9px; color: var(--color-secondary-gray-80); margin-top: 4px; font-family: monospace; line-height: 1.5; }
+
+  /* CHECKBOX / RADIO */
+  .form-items { display: flex; flex-direction: column; gap: 10px; }
+  .form-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--color-secondary-gray-50); cursor: pointer; }
+  .cb { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--color-secondary-gray-80); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .cb.checked { background: var(--color-primary-celtic-blue); border-color: var(--color-primary-celtic-blue); }
+  .rb { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--color-secondary-gray-80); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .rb.checked { border-color: var(--color-primary-celtic-blue); }
+  .rb-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary-celtic-blue); }
+
+  /* SWITCH */
+  .switch-track { width: 40px; height: 22px; border-radius: 100px; background: var(--color-secondary-gray-90); display: flex; align-items: center; padding: 2px; cursor: pointer; transition: background 0.2s; flex-shrink: 0; }
+  .switch-track.on { background: var(--color-primary-celtic-blue); justify-content: flex-end; }
+  .switch-thumb { width: 18px; height: 18px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+
+  /* COMPONENTS */
+  .component-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .comp-card { background: #fff; border-radius: 14px; padding: 1.25rem; box-shadow: var(--shadow-small); }
+  .comp-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-secondary-gray-70); margin-bottom: 1rem; }
+
+  /* NOTIFICATION */
+  .notification { display: flex; align-items: flex-start; gap: 10px; background: var(--color-secondary-celtic-95); border-radius: 10px; padding: 12px 14px; border-left: 3px solid var(--color-primary-celtic-blue); }
+  .notif-icon { width: 20px; height: 20px; border-radius: 50%; background: var(--color-primary-celtic-blue); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .notif-title { font-size: 13px; font-weight: 500; color: var(--color-primary-royal); }
+  .notif-body { font-size: 12px; color: var(--color-secondary-gray-60); margin-top: 2px; }
+
+  .notification.warning { background: #fff9e6; border-color: var(--color-secondary-yellow-40); }
+  .notification.warning .notif-icon { background: var(--color-secondary-yellow-40); }
+  .notification.error { background: #fff0ee; border-color: var(--color-secondary-red-50); }
+  .notification.error .notif-icon { background: var(--color-secondary-red-50); }
+
+  /* TOOLTIP */
+  .tooltip-wrap { position: relative; display: inline-flex; align-items: center; gap: 6px; }
+  .tooltip-trigger { font-size: 13px; color: var(--color-primary-celtic-blue); text-decoration: underline; text-decoration-style: dotted; cursor: help; }
+  .tooltip-box { background: var(--color-primary-royal); color: #fff; font-size: 11px; padding: 6px 10px; border-radius: 6px; white-space: nowrap; }
+
+  /* MOBILE NAV */
+  .mobile-nav { background: #fff; border-radius: 16px; padding: 10px 0 6px; box-shadow: var(--shadow-bottom-nav); display: flex; justify-content: space-around; }
+  .mobile-nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; padding: 4px 12px; }
+  .mobile-nav-icon { width: 24px; height: 24px; border-radius: 6px; background: var(--color-secondary-gray-95); }
+  .mobile-nav-icon.active { background: var(--color-secondary-celtic-90); }
+  .mobile-nav-label { font-size: 10px; color: var(--color-secondary-gray-70); }
+  .mobile-nav-label.active { color: var(--color-primary-celtic-blue); font-weight: 500; }
+
+  /* PROGRESS */
+  .progress-bar { height: 6px; background: var(--color-secondary-gray-95); border-radius: 100px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 100px; background: var(--color-primary-celtic-blue); }
+
+  /* FOOTER */
+  footer { background: var(--color-primary-royal); margin-top: 4rem; padding: 2rem; }
+  .footer-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .footer-brand { display: flex; align-items: center; gap: 8px; }
+  .footer-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--color-primary-green-light); }
+  .footer-name { color: #fff; font-size: 13px; font-weight: 500; }
+  .footer-meta { font-size: 11px; color: rgba(255,255,255,0.4); }
+  .footer-tag { font-size: 11px; color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.08); padding: 4px 10px; border-radius: 100px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">
+    <div class="nav-dot"></div>
+    <span class="nav-title">ISeeChange</span>
+  </div>
+  <div class="nav-links">
+    <a class="nav-link active">Map</a>
+    <a class="nav-link">Feed</a>
+    <a class="nav-link">Reports</a>
+    <a class="nav-link">Community</a>
+  </div>
+  <div class="nav-badge">3</div>
+</nav>
+
+<div class="page">
+
+  <div class="page-header">
+    <div class="page-title">ISeeChange Design System</div>
+    <div class="page-sub">A structured design token library extracted from Figma via MCP + Claude Code</div>
+    <div class="tag"><div class="tag-dot"></div>Generated via Figma MCP · May 2026</div>
+  </div>
+
+  <!-- COLORS -->
+  <div class="section">
+    <div class="section-label">Color tokens</div>
+
+    <div class="color-group">
+      <div class="color-group-name">Primary</div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-circle" style="background:#ff7262"></div><div class="swatch-name">red fanta</div><div class="swatch-hex">#ff7262</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#46d1b4"></div><div class="swatch-name">celtic green</div><div class="swatch-hex">#46d1b4</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#f7d764;border-color:rgba(0,0,0,0.1)"></div><div class="swatch-name">yellow</div><div class="swatch-hex">#f7d764</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#0172da"></div><div class="swatch-name">celtic blue</div><div class="swatch-hex">#0172da</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#062b62"></div><div class="swatch-name">royal</div><div class="swatch-hex">#062b62</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#20a0ec"></div><div class="swatch-name">blue ocean</div><div class="swatch-hex">#20a0ec</div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-name">Royal scale</div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-circle" style="background:#062b62"></div><div class="swatch-name">base</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#14448f"></div><div class="swatch-name">30</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#345ca8"></div><div class="swatch-name">40</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#4f75c3"></div><div class="swatch-name">50</div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-name">Celtic blue scale</div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-circle" style="background:#0172da"></div><div class="swatch-name">base</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#3f91fa"></div><div class="swatch-name">60</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#77acff"></div><div class="swatch-name">70</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#a8cbff"></div><div class="swatch-name">80</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#d5eafe"></div><div class="swatch-name">90</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#ecf6ff;border-color:rgba(0,0,0,0.08)"></div><div class="swatch-name">95</div></div>
+      </div>
+    </div>
+
+    <div class="color-group">
+      <div class="color-group-name">Green scale</div>
+      <div class="swatches">
+        <div class="swatch"><div class="swatch-circle" style="background:#046d56"></div><div class="swatch-name">40</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#109c97"></div><div class="swatch-name">50</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#28b0a5"></div><div class="swatch-name">60</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#46d1b4"></div><div class="swatch-name">celtic</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#80ddca"></div><div class="swatch-name">90</div></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#baefe4;border-color:rgba(0,0,0,0.08)"></div><div class="swatch-name">95</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPOGRAPHY -->
+  <div class="section">
+    <div class="section-label">Typography</div>
+    <div class="type-rows">
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">h1</div><div class="type-size">80px / General Sans</div></div>
+        <span style="font-size:3rem;font-weight:500;color:#062b62;letter-spacing:-0.02em;line-height:1.1">Heading One</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">h2</div><div class="type-size">60px / General Sans</div></div>
+        <span style="font-size:2.25rem;font-weight:500;color:#062b62;letter-spacing:-0.02em;line-height:1.1">Heading Two</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">h3</div><div class="type-size">40px / General Sans</div></div>
+        <span style="font-size:1.75rem;font-weight:500;color:#062b62;line-height:1.25">Heading Three</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">h4</div><div class="type-size">28px / General Sans</div></div>
+        <span style="font-size:1.25rem;font-weight:500;color:#062b62;line-height:1.25">Heading Four</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">body-big</div><div class="type-size">20px / Inter</div></div>
+        <span style="font-size:1.1rem;color:#464b52;line-height:1.5">The quick brown fox jumps over the lazy dog</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">body</div><div class="type-size">16px / Inter</div></div>
+        <span style="font-size:1rem;color:#535962;line-height:1.5">The quick brown fox jumps over the lazy dog</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">body-small</div><div class="type-size">14px / Inter</div></div>
+        <span style="font-size:0.875rem;color:#6d7782;line-height:1.5">The quick brown fox jumps over the lazy dog</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">overline</div><div class="type-size">11px / Inter 600</div></div>
+        <span style="font-size:0.6875rem;font-weight:600;color:#6d7782;letter-spacing:0.08em;text-transform:uppercase">Overline Label</span>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><div class="type-style-name">caption</div><div class="type-size">12px / Inter</div></div>
+        <span style="font-size:0.75rem;color:#a1a9b2">Caption and helper text</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="section">
+    <div class="section-label">Buttons</div>
+    <div class="btn-grid">
+      <div class="btn-row">
+        <div class="btn-row-label">Primary</div>
+        <button class="btn btn-primary">Button</button>
+        <button class="btn btn-primary" style="opacity:0.7">Hover</button>
+        <button class="btn btn-primary-dark">Clicked</button>
+        <button class="btn btn-primary btn-disabled">Disabled</button>
+      </div>
+      <div class="btn-row">
+        <div class="btn-row-label">Secondary</div>
+        <button class="btn btn-secondary">Button</button>
+        <button class="btn btn-secondary-dark">Hover</button>
+        <button class="btn btn-secondary" style="background:#edf2f7;border-color:#a1a9b2">Clicked</button>
+        <button class="btn btn-secondary btn-disabled">Disabled</button>
+      </div>
+      <div class="btn-row">
+        <div class="btn-row-label">Tertiary</div>
+        <button class="btn btn-tertiary">Button</button>
+        <button class="btn btn-tertiary" style="color:#062b62">Hover</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INPUTS -->
+  <div class="section">
+    <div class="section-label">Inputs</div>
+    <div class="input-grid">
+      <div>
+        <div class="input-label">Search</div>
+        <input class="isc-input" placeholder="Search location or event…" />
+      </div>
+      <div>
+        <div class="input-label">Text field (focused)</div>
+        <input class="isc-input" value="Flooding near riverbank" style="border-color:#0172da" />
+      </div>
+      <div>
+        <div class="input-label">Dropdown</div>
+        <select class="isc-input"><option>Select event type</option><option>Flooding</option><option>Storm surge</option><option>Drought</option></select>
+      </div>
+      <div>
+        <div class="input-label">Error state</div>
+        <input class="isc-input error" value="Invalid location" />
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLS -->
+  <div class="section">
+    <div class="section-label">Pills</div>
+    <div class="pills-row">
+      <span class="pill pill-blue">Flooding</span>
+      <span class="pill pill-green">Active</span>
+      <span class="pill pill-red">Alert</span>
+      <span class="pill pill-yellow">Pending</span>
+      <span class="pill pill-royal">Verified</span>
+      <span class="pill pill-gray">Archived</span>
+    </div>
+  </div>
+
+  <!-- FORM CONTROLS -->
+  <div class="section">
+    <div class="section-label">Form controls</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem">
+      <div>
+        <div class="color-group-name" style="margin-bottom:0.75rem">Checkbox</div>
+        <div class="form-items">
+          <div class="form-item"><div class="cb checked"><svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>Flooding reported</div>
+          <div class="form-item"><div class="cb"></div>High tide alert</div>
+          <div class="form-item"><div class="cb checked"><svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>Storm damage</div>
+        </div>
+      </div>
+      <div>
+        <div class="color-group-name" style="margin-bottom:0.75rem">Radio</div>
+        <div class="form-items">
+          <div class="form-item"><div class="rb checked"><div class="rb-dot"></div></div>Last 24 hours</div>
+          <div class="form-item"><div class="rb"></div>Last 7 days</div>
+          <div class="form-item"><div class="rb"></div>Last 30 days</div>
+        </div>
+      </div>
+      <div>
+        <div class="color-group-name" style="margin-bottom:0.75rem">Switch</div>
+        <div class="form-items">
+          <div class="form-item"><div class="switch-track on"><div class="switch-thumb"></div></div>Notifications on</div>
+          <div class="form-item"><div class="switch-track"><div class="switch-thumb"></div></div>Dark mode</div>
+          <div class="form-item"><div class="switch-track on"><div class="switch-thumb"></div></div>Location access</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHADOWS -->
+  <div class="section">
+    <div class="section-label">Shadows</div>
+    <div class="shadow-grid">
+      <div class="shadow-card" style="box-shadow:var(--shadow-small)"><div class="shadow-name">small</div><div class="shadow-value">0px 8px 24px<br>rgba(151,151,151,0.13)</div></div>
+      <div class="shadow-card" style="box-shadow:var(--shadow-medium)"><div class="shadow-name">medium</div><div class="shadow-value">0px 12px 30px<br>rgba(0,0,0,0.10)</div></div>
+      <div class="shadow-card" style="box-shadow:var(--shadow-big)"><div class="shadow-name">big</div><div class="shadow-value">0px 16px 30px<br>rgba(0,0,0,0.12)</div></div>
+      <div class="shadow-card" style="box-shadow:var(--shadow-bottom-nav)"><div class="shadow-name">bottom nav</div><div class="shadow-value">0px 0px 30px<br>rgba(0,0,0,0.12)</div></div>
+    </div>
+  </div>
+
+  <!-- COMPONENTS -->
+  <div class="section">
+    <div class="section-label">Components</div>
+    <div class="component-grid">
+
+      <div class="comp-card">
+        <div class="comp-title">Tooltip & Progress</div>
+        <div style="margin-bottom:1.5rem">
+          <div class="tooltip-wrap">
+            <span class="tooltip-trigger">What is a flood event?</span>
+            <div class="tooltip-box">Water exceeding normal boundaries</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#6d7782;margin-bottom:5px"><span>Reports submitted</span><span>68%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#6d7782;margin-bottom:5px"><span>Verification complete</span><span>42%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:42%;background:#46d1b4"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#6d7782;margin-bottom:5px"><span>Community response</span><span>85%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:85%;background:#ff7262"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comp-card" style="grid-column:1/-1">
+        <div class="comp-title">Mobile bottom navigation</div>
+        <div class="mobile-nav">
+          <div class="mobile-nav-item">
+            <div class="mobile-nav-icon active"></div>
+            <div class="mobile-nav-label active">Map</div>
+          </div>
+          <div class="mobile-nav-item">
+            <div class="mobile-nav-icon"></div>
+            <div class="mobile-nav-label">Feed</div>
+          </div>
+          <div class="mobile-nav-item">
+            <div class="mobile-nav-icon"></div>
+            <div class="mobile-nav-label">Report</div>
+          </div>
+          <div class="mobile-nav-item">
+            <div class="mobile-nav-icon"></div>
+            <div class="mobile-nav-label">Community</div>
+          </div>
+          <div class="mobile-nav-item">
+            <div class="mobile-nav-icon"></div>
+            <div class="mobile-nav-label">Profile</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-dot"></div>
+      <span class="footer-name">ISeeChange Design System</span>
+    </div>
+    <span class="footer-meta">github.com/robrego/iseechange-design-system</span>
+    <span class="footer-tag">Figma MCP + Claude Code</span>
+  </div>
+</footer>
+
+</body>
+</html>
