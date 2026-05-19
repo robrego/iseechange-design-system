@@ -1,0 +1,138 @@
+/* ISC Design System — Typography Tokens */
+/* Auto-generated from Figma: Design System - ISC */
+
+/* Primary typeface: General Sans (headings) — install via https://www.fontshare.com/fonts/general-sans */
+/* Body typeface: Inter — install via https://fonts.google.com/specimen/Inter */
+
+:root {
+  /* ─── Font Families ───────────────────────── */
+  --font-family-heading: 'General Sans', Arial, sans-serif;
+  --font-family-body:    'Inter', system-ui, sans-serif;
+
+  /* ─── Headings (General Sans Medium) ─────── */
+  --font-size-h1:        5rem;        /* 80px */
+  --font-size-h2:        3.75rem;     /* 60px */
+  --font-size-h3:        2.5rem;      /* 40px */
+  --font-size-h4:        1.75rem;     /* 28px */
+  --font-weight-heading: 500;         /* Medium */
+  --line-height-h1:      1.1;
+  --line-height-h2:      1.1;
+  --line-height-h3:      1.25;
+  --line-height-h4:      1.25;
+
+  /* ─── Body (Inter) ────────────────────────── */
+  --font-size-body-big:   1.25rem;    /* 20px */
+  --font-size-body:       1rem;       /* 16px */
+  --font-size-body-small: 0.875rem;   /* 14px */
+  --line-height-body:     1.5;
+
+  /* ─── Utility Styles ──────────────────────── */
+  --font-size-overline:      0.6875rem; /* 11px */
+  --font-weight-overline:    600;        /* Semi Bold */
+  --line-height-overline:    1.5;
+  --letter-spacing-overline: 0.08em;    /* 8% */
+
+  --font-size-caption: 0.75rem;       /* 12px */
+  --font-size-label:   0.75rem;       /* 12px */
+  --line-height-label: 1.2;
+
+  /* ─── Font Weights ────────────────────────── */
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+}
+
+/* ─── Text Style Utilities ──────────────────── */
+
+.text-h1 {
+  font-family:   var(--font-family-heading);
+  font-size:     var(--font-size-h1);
+  font-weight:   var(--font-weight-heading);
+  line-height:   var(--line-height-h1);
+}
+
+.text-h2 {
+  font-family: var(--font-family-heading);
+  font-size:   var(--font-size-h2);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-h2);
+}
+
+.text-h3 {
+  font-family: var(--font-family-heading);
+  font-size:   var(--font-size-h3);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-h3);
+}
+
+.text-h4 {
+  font-family: var(--font-family-heading);
+  font-size:   var(--font-size-h4);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-h4);
+}
+
+.text-body-big-medium {
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-body-big);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+.text-body-big {
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-body-big);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+.text-body-medium {
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+.text-body {
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+.text-body-small-medium {
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-body-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+.text-body-small {
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-body-small);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+.text-overline {
+  font-family:     var(--font-family-body);
+  font-size:       var(--font-size-overline);
+  font-weight:     var(--font-weight-overline);
+  line-height:     var(--line-height-overline);
+  letter-spacing:  var(--letter-spacing-overline);
+  text-transform:  uppercase;
+}
+
+.text-caption {
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-caption);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+.text-label {
+  font-family: var(--font-family-body);
+  font-size:   var(--font-size-label);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-label);
+}

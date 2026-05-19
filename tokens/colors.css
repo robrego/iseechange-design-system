@@ -1,0 +1,58 @@
+/* ISC Design System — Color Tokens */
+/* Auto-generated from Figma: Design System - ISC */
+
+:root {
+  /* ─── Primary ─────────────────────────────── */
+  --color-primary-red-fanta:   #ff7262;
+  --color-primary-green-light: #46d1b4;
+  --color-primary-yellow:      #f7d764;
+  --color-primary-celtic-blue: #0172da;
+  --color-primary-royal:       #062b62;
+  --color-primary-blue-ocean:  #20a0ec;
+  --color-primary-white:       #ffffff;
+  --color-primary-black:       #000000;
+
+  /* ─── Secondary / Royal ───────────────────── */
+  --color-secondary-royal-30: #14448f;
+  --color-secondary-royal-40: #345ca8;
+  --color-secondary-royal-50: #4f75c3;
+
+  /* ─── Secondary / Celtic Blue ────────────── */
+  --color-secondary-celtic-60: #3f91fa;
+  --color-secondary-celtic-70: #77acff;
+  --color-secondary-celtic-80: #a8cbff;
+  --color-secondary-celtic-90: #d5eafe;
+  --color-secondary-celtic-95: #ecf6ff;
+  --color-secondary-celtic-98: #f8fcff;
+
+  /* ─── Secondary / Green ───────────────────── */
+  --color-secondary-green-40: #048485;
+  --color-secondary-green-50: #109c97;
+  --color-secondary-green-60: #28b0a5;
+  --color-secondary-green-70: #28c7ac;
+  --color-secondary-green-90: #80ddca;
+  --color-secondary-green-95: #baefe4;
+  --color-secondary-green-98: #e1fdf7;
+
+  /* ─── Secondary / Gray ────────────────────── */
+  --color-secondary-gray-50: #464b52;
+  --color-secondary-gray-60: #535962;
+  --color-secondary-gray-70: #6d7782;
+  --color-secondary-gray-80: #a1a9b2;
+  --color-secondary-gray-90: #d0d5d9;
+  --color-secondary-gray-95: #e1e7ed;
+  --color-secondary-gray-98: #edf2f7;
+
+  /* ─── Secondary / Red ─────────────────────── */
+  --color-secondary-red-30: #9e1303;
+  --color-secondary-red-40: #ba2a1a;
+  --color-secondary-red-50: #e53c29;
+  --color-secondary-red-60: #ff5a47;
+  --color-secondary-red-80: #ffb3ab;
+  --color-secondary-red-90: #ffdad5;
+  --color-secondary-red-95: #ffedea;
+  --color-secondary-red-98: #fff8f7;
+
+  /* ─── Secondary / Yellow ──────────────────── */
+  --color-secondary-yellow-40: #deb31b;
+}

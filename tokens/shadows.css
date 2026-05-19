@@ -1,0 +1,10 @@
+/* ISC Design System — Shadow Tokens */
+/* Auto-generated from Figma: Design System - ISC */
+/* Note: shadows should not be used in dark mode per design system guidelines */
+
+:root {
+  --shadow-small:      0px  8px 24px rgba(151, 151, 151, 0.13);
+  --shadow-medium:     0px 12px 30px rgba(0,   0,   0,   0.10);
+  --shadow-big:        0px 16px 30px rgba(0,   0,   0,   0.12);
+  --shadow-bottom-nav: 0px  0px 30px rgba(0,   0,   0,   0.12);
+}

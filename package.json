@@ -1,0 +1,35 @@
+{
+  "name": "@iseechange/design-system",
+  "version": "0.1.0",
+  "description": "ISC Design System — tokens, assets, and components",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./tokens": "./tokens.ts",
+    "./tokens/css": "./tokens/index.css",
+    "./assets": "./assets/index.ts",
+    "./components": "./components/index.ts"
+  },
+  "files": [
+    "tokens/",
+    "assets/",
+    "components/",
+    "index.ts",
+    "tokens.ts"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
