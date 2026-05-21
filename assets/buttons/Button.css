@@ -1,0 +1,46 @@
+/* ISC Design System — Button */
+/* Figma: Assets › Buttons › Button (2251:4413) */
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+
+.isc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.isc-button:disabled {
+  cursor: not-allowed;
+}
+
+/* ─── Size: Big ──────────────────────────────────────────────────────────── */
+
+.isc-button[data-size="Big"] {
+  padding: 14px 24px;
+  font-size: 16px;
+}
+
+/* ─── Type: Primary / Color: Default ─────────────────────────────────────── */
+
+.isc-button[data-variant="Primary"][data-color="Default"] {
+  background-color: var(--color-primary-celtic-blue);
+  color: var(--color-primary-white);
+}
+
+.isc-button[data-variant="Primary"][data-color="Default"]:hover:not(:disabled) {
+  background-color: var(--color-secondary-royal-30);
+}
+
+.isc-button[data-variant="Primary"][data-color="Default"]:disabled {
+  opacity: 0.13;
+}
