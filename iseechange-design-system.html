@@ -342,18 +342,32 @@
         <button class="isc-button" data-variant="Primary" data-color="Default" data-size="Big" disabled>Disabled</button>
       </div>
 
-      <!-- Secondary / Tertiary — placeholder until styled -->
+      <!-- Secondary / Default -->
       <div class="btn-row">
-        <div class="btn-row-label">Secondary</div>
-        <button class="btn btn-secondary">Button</button>
-        <button class="btn btn-secondary-dark">Hover</button>
-        <button class="btn btn-secondary" style="background:#edf2f7;border-color:#a1a9b2">Clicked</button>
-        <button class="btn btn-secondary btn-disabled">Disabled</button>
+        <div class="btn-row-label">Secondary · Default</div>
+        <button class="isc-button" data-variant="Secondary" data-color="Default" data-size="Big">Button</button>
+        <button class="isc-button" data-variant="Secondary" data-color="Default" data-size="Big" disabled>Disabled</button>
       </div>
+
+      <!-- Secondary / Inverse (shown on dark bg) -->
+      <div class="btn-row" style="background:var(--color-primary-royal);border-radius:12px;padding:12px 16px">
+        <div class="btn-row-label" style="color:rgba(255,255,255,0.55)">Secondary · Inverse</div>
+        <button class="isc-button" data-variant="Secondary" data-color="Inverse" data-size="Big">Button</button>
+        <button class="isc-button" data-variant="Secondary" data-color="Inverse" data-size="Big" disabled>Disabled</button>
+      </div>
+
+      <!-- Tertiary / Default -->
       <div class="btn-row">
-        <div class="btn-row-label">Tertiary</div>
-        <button class="btn btn-tertiary">Button</button>
-        <button class="btn btn-tertiary" style="color:#062b62">Hover</button>
+        <div class="btn-row-label">Tertiary · Default</div>
+        <button class="isc-button" data-variant="Tertiary" data-color="Default" data-size="Big">Button</button>
+        <button class="isc-button" data-variant="Tertiary" data-color="Default" data-size="Big" disabled>Disabled</button>
+      </div>
+
+      <!-- Tertiary / Inverse (shown on dark bg) -->
+      <div class="btn-row" style="background:var(--color-primary-royal);border-radius:12px;padding:12px 16px">
+        <div class="btn-row-label" style="color:rgba(255,255,255,0.55)">Tertiary · Inverse</div>
+        <button class="isc-button" data-variant="Tertiary" data-color="Inverse" data-size="Big">Button</button>
+        <button class="isc-button" data-variant="Tertiary" data-color="Inverse" data-size="Big" disabled>Disabled</button>
       </div>
     </div>
   </div>

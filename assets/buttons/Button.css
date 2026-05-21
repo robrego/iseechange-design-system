@@ -16,7 +16,7 @@
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .isc-button:disabled {
@@ -43,4 +43,68 @@
 
 .isc-button[data-variant="Primary"][data-color="Default"]:disabled {
   opacity: 0.13;
+}
+
+/* ─── Type: Secondary / Color: Default ───────────────────────────────────── */
+
+.isc-button[data-variant="Secondary"][data-color="Default"] {
+  background-color: var(--color-primary-white);
+  color: var(--color-primary-black);
+  border: 1px solid var(--color-secondary-gray-90);
+}
+
+.isc-button[data-variant="Secondary"][data-color="Default"]:hover:not(:disabled) {
+  background-color: var(--color-secondary-gray-98);
+}
+
+.isc-button[data-variant="Secondary"][data-color="Default"]:disabled {
+  opacity: 0.40;
+}
+
+/* ─── Type: Secondary / Color: Inverse ───────────────────────────────────── */
+
+.isc-button[data-variant="Secondary"][data-color="Inverse"] {
+  background-color: transparent;
+  color: var(--color-primary-white);
+  border: 1px solid var(--color-primary-white);
+}
+
+.isc-button[data-variant="Secondary"][data-color="Inverse"]:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.isc-button[data-variant="Secondary"][data-color="Inverse"]:disabled {
+  opacity: 0.15;
+}
+
+/* ─── Type: Tertiary / Color: Default ────────────────────────────────────── */
+
+.isc-button[data-variant="Tertiary"][data-color="Default"] {
+  background-color: transparent;
+  color: var(--color-primary-celtic-blue);
+  border: none;
+}
+
+.isc-button[data-variant="Tertiary"][data-color="Default"]:hover:not(:disabled) {
+  color: var(--color-secondary-royal-40);
+}
+
+.isc-button[data-variant="Tertiary"][data-color="Default"]:disabled {
+  opacity: 0.40;
+}
+
+/* ─── Type: Tertiary / Color: Inverse ────────────────────────────────────── */
+
+.isc-button[data-variant="Tertiary"][data-color="Inverse"] {
+  background-color: transparent;
+  color: var(--color-primary-white);
+  border: none;
+}
+
+.isc-button[data-variant="Tertiary"][data-color="Inverse"]:hover:not(:disabled) {
+  color: var(--color-secondary-celtic-80);
+}
+
+.isc-button[data-variant="Tertiary"][data-color="Inverse"]:disabled {
+  opacity: 0.15;
 }
