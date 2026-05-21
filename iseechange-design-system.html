@@ -6,6 +6,7 @@
 <title>ISeeChange Design System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/buttons/Button.css">
 <style>
   :root {
     --color-primary-red-fanta:   #ff7262;
@@ -333,13 +334,15 @@
   <div class="section">
     <div class="section-label">Buttons</div>
     <div class="btn-grid">
+
+      <!-- Primary / Default — from Figma (isc-button) -->
       <div class="btn-row">
-        <div class="btn-row-label">Primary</div>
-        <button class="btn btn-primary">Button</button>
-        <button class="btn btn-primary" style="opacity:0.7">Hover</button>
-        <button class="btn btn-primary-dark">Clicked</button>
-        <button class="btn btn-primary btn-disabled">Disabled</button>
+        <div class="btn-row-label">Primary · Default</div>
+        <button class="isc-button" data-variant="Primary" data-color="Default" data-size="Big">Button</button>
+        <button class="isc-button" data-variant="Primary" data-color="Default" data-size="Big" disabled>Disabled</button>
       </div>
+
+      <!-- Secondary / Tertiary — placeholder until styled -->
       <div class="btn-row">
         <div class="btn-row-label">Secondary</div>
         <button class="btn btn-secondary">Button</button>
